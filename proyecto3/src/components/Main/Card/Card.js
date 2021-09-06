@@ -7,16 +7,12 @@ class Card extends Component{
         this.state = {
             viewMore: false,
             text:'Ver más',
+            title: props.datosPelicula.title,
+            image: props.datosPelicula.poster_path,
+           
         }
     }
-    componentDidMount(){
-        const url = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums'
-        fetch (url)
-            .then((respuesta)=> respuesta.json())
-            .then(data=>{
-                console.log(data);
-            })
-    }
+   
     viewMore(){
         if(this.state.viewMore){
             this.setState({
@@ -41,8 +37,8 @@ class Card extends Component{
                     <i className="far fa-window-close" />
                 </section>
                 <main>
-                    <img src="./img/image-default.png" alt />
-                    <h3>Título/ Nombre</h3>
+                    <img src={this.state.image} alt />
+                    <h3>{this.state.title}</h3>
                     <p className="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque
                     velit minus facere laboriosam voluptatem impedit ea unde labore optio
