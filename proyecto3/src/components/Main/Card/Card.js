@@ -9,6 +9,14 @@ class Card extends Component{
             text:'Ver más',
         }
     }
+    componentDidMount(){
+        const url = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums'
+        fetch (url)
+            .then((respuesta)=> respuesta.json())
+            .then(data=>{
+                console.log(data);
+            })
+    }
     viewMore(){
         if(this.state.viewMore){
             this.setState({
