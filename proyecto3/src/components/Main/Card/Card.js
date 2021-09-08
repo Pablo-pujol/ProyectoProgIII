@@ -7,8 +7,7 @@ class Card extends Component{
         this.state = {
             viewMore: false,
             text:'Ver más',
-            title: props.datosPelicula.title,
-            image: props.datosPelicula.poster_path,
+            
            
         }
     }
@@ -26,7 +25,9 @@ class Card extends Component{
             })            
         }
     }
+
     render(){
+        const { poster_path, title } = this.props.datosPelicula;
         return(
             <article>
                 <section className="navigation">
@@ -37,8 +38,8 @@ class Card extends Component{
                     <i className="far fa-window-close" />
                 </section>
                 <main>
-                    <img src={this.state.image} alt />
-                    <h3>{this.state.title}</h3>
+                    <img src={'https://image.tmdb.org/t/p/w500' + poster_path}  alt="" />
+                    <h3>{title}</h3>
                     <p className="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque
                     velit minus facere laboriosam voluptatem impedit ea unde labore optio
