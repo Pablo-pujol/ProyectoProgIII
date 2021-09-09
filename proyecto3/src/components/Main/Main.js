@@ -23,6 +23,12 @@ class Main extends Component {
             })
             .catch((error) => console.log(error));
     }
+    deleteCard(id){
+        const otros = this.state.peliculas.filter(pelicula => pelicula.id != id)
+        this.setState({
+            peliculas : otros
+        })
+    }
     render(){
         return (
             <div>
@@ -32,6 +38,7 @@ class Main extends Component {
               <Card
                 key={pelicula.id}
                 datosPelicula={pelicula}
+                borrar = {(peliculaABorrar)=> this.deleteCard(peliculaABorrar)}
               />
             ))
           }

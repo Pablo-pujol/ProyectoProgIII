@@ -27,7 +27,7 @@ class Card extends Component{
     }
 
     render(){
-        const { poster_path, title } = this.props.datosPelicula;
+        const { poster_path, title, original_language, overview, release_date, id } = this.props.datosPelicula;
         return(
             <article>
                 <section className="navigation">
@@ -37,30 +37,16 @@ class Card extends Component{
                     </div>
                     <i className="far fa-window-close" />
                 </section>
-                <main>
+                <main className='movie-card'>
                     <img src={'https://image.tmdb.org/t/p/w500' + poster_path}  alt="" />
                     <h3>{title}</h3>
-                    <p className="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque
-                    velit minus facere laboriosam voluptatem impedit ea unde labore optio
-                    eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint,
-                    laboriosam cum.
-                    </p>
+                    <p className="description">{overview}</p>
                     <section className={`adicional ${this.state.viewMore ? 'aditional-info-show' : 'aditional-info'}`}>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
-                        atque.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
-                        atque.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
-                        atque.
-                    </p>
+                    <p>Fecha de estreno: {release_date}</p>
+                    <p>Idioma original: {original_language}</p>
                     </section>
                     <a onClick={()=>this.viewMore()}>{this.state.text}</a>
+                    <button onClick={()=> this.props.borrar(id)}>Borrar</button>
                 </main>
             </article>
         )
