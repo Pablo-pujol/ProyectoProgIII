@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Card from './Card/Card';
 import Header  from '../Header/Header'
+import './Main.css'
 
 
 class Main extends Component {
@@ -65,8 +66,8 @@ class Main extends Component {
             <>
                 <Header filtrarPeliculas={(parametro)=> this.filtrarPeliculas(parametro)} />
                 <div>
-                    <main>
                     <button onClick={() => this.cargarMasPeliculas()} type="button">Cargar más tarjetas</button>
+                    <main className='contenedor'>
                     {this.state.cargando === false ? 
                     <p>Cargando</p>: 
                     this.state.peliculas.map((pelicula) => 
