@@ -6,6 +6,7 @@ class Header extends Component{
 
         this.state = {
             filtro: "",
+            vista: false
         };
     }
     enviarSubmit(e) {
@@ -23,10 +24,11 @@ class Header extends Component{
     
     render(){ 
     return(
+        <>
         <header>
             <h1>Título/ Nombre de la app</h1>
             <section>
-                <p>Ordenar ASC/ DESC</p>
+                {/*<p>Ordenar ASC/ DESC</p>*/}
                 <i className="fas fa-th"></i>
                 <i className="fas fa-align-justify"></i>
                 <form onSubmit= {this.enviarSubmit}>
@@ -39,7 +41,10 @@ class Header extends Component{
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </section>
+            <button></button>
+            <button></button>
         </header>
+        </>
         )
     }
 }

@@ -11,6 +11,7 @@ class Main extends Component {
             cargando: false,
             nexturl: "",
             pagina: 1, 
+            pelisOriginales: []
         }
     }
 
@@ -22,6 +23,7 @@ class Main extends Component {
             .then(data=>{
                 this.setState({ 
                     peliculas: data.results,
+                    pelisOriginales: data.results,
                     cargando: true,
                     nexturl:  this.state.pagina + 1,
                 });
@@ -60,21 +62,24 @@ class Main extends Component {
     
     render(){
         return (
-            <div>
-                <main>
-                   <button onClick={() => this.cargarMasPeliculas()} type="button">Cargar más tarjetas</button>
-                   {this.state.cargando === false ? 
-            <p>Cargando</p>: 
-                  this.state.peliculas.map((pelicula) => 
-              <Card
-                key={pelicula.id}
-                datosPelicula={pelicula}
-                borrar = {(peliculaABorrar)=> this.deleteCard(peliculaABorrar)}
-              />
-            )
-          }
-                 </main>
-             </div>
+            <>
+                <Header filtrarPeliculas={(parametro)=> this.filtrarPeliculas(parametro)} />
+                <div>
+                    <main>
+                    <button onClick={() => this.cargarMasPeliculas()} type="button">Cargar más tarjetas</button>
+                    {this.state.cargando === false ? 
+                    <p>Cargando</p>: 
+                    this.state.peliculas.map((pelicula) => 
+                    <Card
+                    key={pelicula.id}
+                    datosPelicula={pelicula}
+                    borrar = {(peliculaABorrar)=> this.deleteCard(peliculaABorrar)}
+                    />
+                    )
+                    }
+                    </main>
+                </div>
+            </>
         )
     }
 }
