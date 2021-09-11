@@ -20,7 +20,9 @@ class Header extends Component{
             () => this.props.filtrarPeliculas(this.state.filtro)
         );
     }
-
+    orientacion(){
+        
+    }
     
     render(){ 
     return(
