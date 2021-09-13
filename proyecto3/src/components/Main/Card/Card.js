@@ -21,13 +21,13 @@ class Card extends Component{
         } else {
             this.setState({
                 viewMore: true,
-                text: 'ver menos'
+                text: 'Ver menos'
             })            
         }
     }
 
     render(){
-        const { poster_path, title, original_language, overview, release_date, id } = this.props.datosPelicula;
+        const { poster_path, title, original_language, overview, release_date, id, popularity } = this.props.datosPelicula;
         return(
             <article>
                 {/*<section className="navigation">
@@ -38,12 +38,13 @@ class Card extends Component{
                     <i className="far fa-window-close" />
                 </section>*/}
                 <main className='movie-card'>
-                    <img src={'https://image.tmdb.org/t/p/w500' + poster_path}  alt="" />
+                    <img src={'https://image.tmdb.org/t/p/w342' + poster_path}  alt="" />
                     <h3>{title}</h3>
                     <p className="description">{overview}</p>
                     <section className={`adicional ${this.state.viewMore ? 'aditional-info-show' : 'aditional-info'}`}>
                     <p>Fecha de estreno: {release_date}</p>
                     <p>Idioma original: {original_language}</p>
+                    <p>Popularidad: {popularity}</p>
                     </section>
                     <a className='ver' onClick={()=>this.viewMore()}>{this.state.text}</a>
                     <button onClick={()=> this.props.borrar(id)}>Borrar</button>

@@ -12,9 +12,8 @@
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
 }
-.movie-card img{
-    height: 150px;
-    width:150px;
+.movie-card img{  
+    width:100%;
     margin-bottom: 20px; 
 }
 .ver{
@@ -23,4 +22,8 @@
 .ver :hover{
     text-decoration: underline ;
     cursor: pointer;
+}
+.movie-card-columna{
+    width: 40%;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
 }

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-
+import './Header.css'
 class Header extends Component{
     constructor(props){
         super(props); 
-
         this.state = {
             filtro: "",
-            vista: false
+            vista: false,
+            palabra: 'vertical'
         };
     }
     enviarSubmit(e) {
@@ -21,18 +21,28 @@ class Header extends Component{
         );
     }
     orientacion(){
-        
+        if(this.state.orientacion){
+            this.setState({
+                vista: false,
+                palabra: 'vertical'
+            })
+        } else {
+            this.setState({
+                vista: true,
+                palabra: 'horizontal'
+            })            
+        }
     }
     
     render(){ 
     return(
         <>
-        <header>
+        <header className='header'>
             <h1>Título/ Nombre de la app</h1>
             <section>
                 {/*<p>Ordenar ASC/ DESC</p>*/}
-                <i className="fas fa-th"></i>
-                <i className="fas fa-align-justify"></i>
+                {/*<i className="fas fa-th"></i>
+                <i className="fas fa-align-justify"></i>*/}
                 <form onSubmit= {this.enviarSubmit}>
                     <input 
                         type="text" 
@@ -40,11 +50,12 @@ class Header extends Component{
                         onChange={(e) => this.cambios(e)}
                         value={this.state.filtro}    
                     ></input>
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <button type="submit"><i className="fas fa-search"></i></button>
                 </form>
             </section>
-            <button></button>
-            <button></button>
+            <div className='orientacion'> 
+                <a onClick={()=> this.orientacion()}>{this.state.palabra}</a>
+            </div>
         </header>
         </>
         )
