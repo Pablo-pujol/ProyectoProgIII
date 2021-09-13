@@ -50,7 +50,7 @@ class Card extends Component{
                         <p>Popularidad: {popularity}</p>
                         </section>
                         <a className='ver' onClick={()=>this.viewMore()}>{this.state.text}</a>
-                        <button onClick={()=> this.props.borrar(id)}>Borrar</button>
+                        <button onClick={()=> this.props.borrar(id)} className= {`${this.props.estado ? 'borrar-columna':'borrar'}`}><i class="far fa-trash-alt"></i></button>
                     </div>
                 </main>
             </article>

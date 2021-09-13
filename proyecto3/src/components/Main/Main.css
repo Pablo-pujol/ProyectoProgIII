@@ -18,9 +18,23 @@
 .button{
     margin: 0px;
     position: relative;
-    left: 90%;
+    left: 84%;
     bottom: 25px;
     border: solid 1px var(--light-gray);
     height: 28px;
     border-radius: 4px;
+    margin-right: 16px;
+}
+.button:hover{
+    border: solid 1px gray;
+}
+
+.resultado-{
+    
+    color: red;
+    text-align: center;
+    font-size: medium;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }

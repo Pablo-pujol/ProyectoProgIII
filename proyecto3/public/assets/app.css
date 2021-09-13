@@ -33,7 +33,10 @@ body {
     font-size: 25px;
     font-family: sans-serif;
   }
-  
+  .orientacion :hover{
+    text-decoration: underline ;
+    cursor: pointer;
+  }
   .row {
     display: -ms-flexbox;
     display: flex;
@@ -59,12 +62,6 @@ body {
     font-size: 17px;
     font-family: sans-serif;
   }
-
-  .orden{
-    font-size: 15px;
-    padding-right: 52px;
-  }
-  
   
   .container {
     width: 100%;

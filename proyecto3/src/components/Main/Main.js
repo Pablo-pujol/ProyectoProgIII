@@ -81,7 +81,7 @@ class Main extends Component {
                         sentido={(p)=> this.sentido(p)}
                        
                 />
-                {this.state.peliculas.length == 0 ? <p> No se encontraron resultados </p> : ""}
+                
                 <div className = "main">
                     <button onClick={() => this.cargarMasPeliculas()} type="button" className = "button">Cargar más tarjetas</button>
                     <button onClick={() => this.resetear()} type="button" className = "button">resetear</button>
@@ -99,6 +99,7 @@ class Main extends Component {
                     }
                     </main>
                 </div>
+                {this.state.peliculas.length == 0 ? <p className="resultado-"> No se encontraron resultados </p> : ""}
             </>
         )
     }
