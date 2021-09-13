@@ -21,17 +21,23 @@ class Header extends Component{
         );
     }
     orientacion(){
-        if(this.state.orientacion){
+        if(this.state.vista){
+            console.log('toco falso');
+
             this.setState({
                 vista: false,
                 palabra: 'vertical'
-            })
+            },
+            () => this.props.sentido(this.state.vista))
         } else {
+            console.log('toco');
             this.setState({
                 vista: true,
                 palabra: 'horizontal'
-            })            
+            },
+            () => this.props.sentido(this.state.vista))            
         }
+        
     }
     
     render(){ 

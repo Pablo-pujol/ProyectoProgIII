@@ -12,7 +12,8 @@ class Main extends Component {
             cargando: false,
             nexturl: "",
             pagina: 1, 
-            pelisOriginales: []
+            pelisOriginales: [],
+            contenedor: false,
         }
     }
 
@@ -60,14 +61,22 @@ class Main extends Component {
         .catch((error) => console.log(error))
        
     }
+    sentido(p){
+        this.setState({
+            
+        })
+    }
     
     render(){
         return (
             <>
-                <Header filtrarPeliculas={(parametro)=> this.filtrarPeliculas(parametro)} />
+                <Header filtrarPeliculas={(parametro)=> this.filtrarPeliculas(parametro)} 
+                        sentido={()=> this.sentido()}
+                       
+                />
                 <div>
                     <button onClick={() => this.cargarMasPeliculas()} type="button">Cargar más tarjetas</button>
-                    <main className='contenedor'>
+                    <main className= {`${this.sentido ? 'contenedor-columna':'contenedor'}`}>
                     {this.state.cargando === false ? 
                     <p>Cargando</p>: 
                     this.state.peliculas.map((pelicula) => 
