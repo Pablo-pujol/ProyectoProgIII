@@ -44,24 +44,34 @@ class Header extends Component{
     render(){ 
     return(
         <>
-        <header className='header'>
-            <h1>Título/ Nombre de la app</h1>
-            <section>
+        <header className="main-header">
+        <div className="container">
+            <div className="row align-items-center">
+            <h1 className = "titulo">MovieFan</h1>
+            <section className="row2 align-items-center">
+            <article class="botton">
+                <div className='orientacion'> 
+                <a onClick={()=> this.orientacion()}>{this.state.palabra}</a>
+            </div>
+            </article>
                 {/*<p>Ordenar ASC/ DESC</p>*/}
                 {/*<i className="fas fa-th"></i>
                 <i className="fas fa-align-justify"></i>*/}
-                <form onSubmit= {this.enviarSubmit}>
+                <form onSubmit= {this.enviarSubmit} className="search-form">
                     <input 
                         type="text" 
                         name="title" 
                         onChange={(e) => this.cambios(e)}
-                        value={this.state.filtro}    
+                        value={this.state.filtro}  
+                        className="search-form_input"  
+                        placeholder="Buscar pelicula"  
                     ></input>
-                    <button type="submit"><i className="fas fa-search"></i></button>
+                    <button type="submit" className="search-form_button"><i className="fas fa-search"></i></button>
                 </form>
+                
             </section>
-            <div className='orientacion'> 
-                <a onClick={()=> this.orientacion()}>{this.state.palabra}</a>
+            
+            </div>
             </div>
         </header>
         </>

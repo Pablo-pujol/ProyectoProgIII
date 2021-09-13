@@ -2,7 +2,7 @@
 body {
   min-height: 100vh;
   margin: 0;
-  font-size: 10px;
+  font-size: 14px;
 
 }
 
@@ -56,7 +56,8 @@ body {
 
   .botton{
     padding-right: 28px;
-    font-size: 12px;
+    font-size: 17px;
+    font-family: sans-serif;
   }
 
   .orden{
@@ -98,7 +99,7 @@ body {
     padding: 0px 35px 0px 7px;
     border-radius: 3px;
     height: 40px;
-    font-size: 1.5em;
+    font-size: 16px;
   
   }
   

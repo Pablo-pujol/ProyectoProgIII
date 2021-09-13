@@ -74,8 +74,8 @@ class Main extends Component {
                         sentido={(p)=> this.sentido(p)}
                        
                 />
-                <div>
-                    <button onClick={() => this.cargarMasPeliculas()} type="button">Cargar más tarjetas</button>
+                <div className = "main">
+                    <button onClick={() => this.cargarMasPeliculas()} type="button" className = "button">Cargar más tarjetas</button>
                     <main className= {`${this.state.contenedor ? 'contenedor-columna':'contenedor'}`}>
                     {this.state.cargando === false ? 
                     <p>Cargando</p>: 
