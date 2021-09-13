@@ -66,6 +66,13 @@ class Main extends Component {
             contenedor: p
         })
     }
+
+    resetear (){
+        this.setState({
+            peliculas: this.state.pelisOriginales,
+            pagina: 1
+        })
+    }
     
     render(){
         return (
@@ -74,8 +81,10 @@ class Main extends Component {
                         sentido={(p)=> this.sentido(p)}
                        
                 />
+                {this.state.peliculas.length == 0 ? <p> No se encontraron resultados </p> : ""}
                 <div className = "main">
                     <button onClick={() => this.cargarMasPeliculas()} type="button" className = "button">Cargar más tarjetas</button>
+                    <button onClick={() => this.resetear()} type="button" className = "button">resetear</button>
                     <main className= {`${this.state.contenedor ? 'contenedor-columna':'contenedor'}`}>
                     {this.state.cargando === false ? 
                     <p>Cargando</p>: 
