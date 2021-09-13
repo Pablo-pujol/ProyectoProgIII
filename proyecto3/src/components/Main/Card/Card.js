@@ -41,15 +41,17 @@ class Card extends Component{
                 </section>*/}
                 <main className={`${this.props.estado ? 'movie-card-columna':'movie-card'}`}>
                     <img src={'https://image.tmdb.org/t/p/w342' + poster_path}  alt="" />
-                    <h3>{title}</h3>
-                    <p className="description">{overview}</p>
-                    <section className={`${this.state.viewMore ? 'aditional-info-show' : 'aditional-info'}`}>
-                    <p>Fecha de estreno: {release_date}</p>
-                    <p>Idioma original: {original_language}</p>
-                    <p>Popularidad: {popularity}</p>
-                    </section>
-                    <a className='ver' onClick={()=>this.viewMore()}>{this.state.text}</a>
-                    <button onClick={()=> this.props.borrar(id)}>Borrar</button>
+                    <div className={`${this.props.estado ? 'textocarta':''}`}>
+                        <h3>{title}</h3>
+                        <p className="description">{overview}</p>
+                        <section className={`${this.state.viewMore ? 'aditional-info-show' : 'aditional-info'}`}>
+                        <p>Fecha de estreno: {release_date}</p>
+                        <p>Idioma original: {original_language}</p>
+                        <p>Popularidad: {popularity}</p>
+                        </section>
+                        <a className='ver' onClick={()=>this.viewMore()}>{this.state.text}</a>
+                        <button onClick={()=> this.props.borrar(id)}>Borrar</button>
+                    </div>
                 </main>
             </article>
         )
