@@ -33,11 +33,12 @@ class Header extends Component{
             console.log('toco');
             this.setState({
                 vista: true,
-                palabra: 'horizontal'
+                palabra: 'horizontal',
+
             },
             () => this.props.sentido(this.state.vista))            
         }
-        
+        this.props.sentido(this.state.vista)
     }
     
     render(){ 

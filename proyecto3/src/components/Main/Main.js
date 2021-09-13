@@ -63,7 +63,7 @@ class Main extends Component {
     }
     sentido(p){
         this.setState({
-            
+            contenedor: p
         })
     }
     
@@ -71,12 +71,12 @@ class Main extends Component {
         return (
             <>
                 <Header filtrarPeliculas={(parametro)=> this.filtrarPeliculas(parametro)} 
-                        sentido={()=> this.sentido()}
+                        sentido={(p)=> this.sentido(p)}
                        
                 />
                 <div>
                     <button onClick={() => this.cargarMasPeliculas()} type="button">Cargar más tarjetas</button>
-                    <main className= {`${this.sentido ? 'contenedor-columna':'contenedor'}`}>
+                    <main className= {`${this.state.contenedor ? 'contenedor-columna':'contenedor'}`}>
                     {this.state.cargando === false ? 
                     <p>Cargando</p>: 
                     this.state.peliculas.map((pelicula) => 
