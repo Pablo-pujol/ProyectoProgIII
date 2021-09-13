@@ -81,6 +81,7 @@ class Main extends Component {
                     <p>Cargando</p>: 
                     this.state.peliculas.map((pelicula) => 
                     <Card
+                    estado={this.state.contenedor}
                     key={pelicula.id}
                     datosPelicula={pelicula}
                     borrar = {(peliculaABorrar)=> this.deleteCard(peliculaABorrar)}

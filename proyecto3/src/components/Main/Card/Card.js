@@ -26,6 +26,8 @@ class Card extends Component{
         }
     }
 
+
+
     render(){
         const { poster_path, title, original_language, overview, release_date, id, popularity } = this.props.datosPelicula;
         return(
@@ -37,7 +39,7 @@ class Card extends Component{
                     </div>
                     <i className="far fa-window-close" />
                 </section>*/}
-                <main className='movie-card'>
+                <main className={`${this.props.estado ? 'movie-card-columna':'movie-card'}`}>
                     <img src={'https://image.tmdb.org/t/p/w342' + poster_path}  alt="" />
                     <h3>{title}</h3>
                     <p className="description">{overview}</p>
