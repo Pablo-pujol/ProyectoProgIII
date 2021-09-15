@@ -103,7 +103,7 @@ class Main extends Component {
                     }
                     </main>
                 </div>
-                {this.state.peliculas.length == 0 ? <p className="resultado-"> No se encontraron resultados </p> : ""}
+                {this.state.peliculas.length == 0 ? <p className="resultado-"> No hay datos que coincidan con su búsqueda </p> : ""}
             </>
         )
     }
