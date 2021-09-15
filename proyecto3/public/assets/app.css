@@ -161,7 +161,9 @@ body {
 }
 
 ul.iconos {
-  margin-left: 700px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 ul.iconos-redes {

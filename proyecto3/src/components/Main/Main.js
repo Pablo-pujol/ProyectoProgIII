@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Card from './Card/Card';
+import Card from '../Card/Card';
 import Header  from '../Header/Header'
 import './Main.css'
 
@@ -14,6 +14,7 @@ class Main extends Component {
             pagina: 1, 
             pelisOriginales: [],
             contenedor: false,
+            pelisResetear: []
         }
     }
 
@@ -26,6 +27,7 @@ class Main extends Component {
                 this.setState({ 
                     peliculas: data.results,
                     pelisOriginales: data.results,
+                    pelisResetear : data.results,
                     cargando: true,
                     nexturl:  this.state.pagina + 1,
                 });
@@ -40,9 +42,10 @@ class Main extends Component {
         })
     }
     filtrarPeliculas(textoFiltro){
-        let peliculasFiltradas = this.state.peliculas.filter((pelicula) => 
+        let peliculasFiltradas = this.state.pelisOriginales.filter((pelicula) => 
         pelicula.title.toLowerCase().includes(textoFiltro.toLowerCase())
         );
+        
         this.setState({
             peliculas: peliculasFiltradas,
         });
@@ -55,7 +58,8 @@ class Main extends Component {
         .then(data => {
             this.setState({
                 pagina: this.state.pagina + 1,
-                peliculas: this.state.peliculas.concat(data.results)        
+                peliculas: this.state.peliculas.concat(data.results),  
+                pelisOriginales : this.state.pelisOriginales.concat(data.results)
             })
         })
         .catch((error) => console.log(error))
@@ -69,7 +73,7 @@ class Main extends Component {
 
     resetear (){
         this.setState({
-            peliculas: this.state.pelisOriginales,
+            peliculas: this.state.pelisResetear,
             pagina: 1
         })
     }

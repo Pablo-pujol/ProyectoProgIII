@@ -6,7 +6,7 @@ class Header extends Component{
         this.state = {
             filtro: "",
             vista: false,
-            palabra: 'vertical'
+            palabra: "fas fa-th"
         };
     }
     enviarSubmit(e) {
@@ -26,14 +26,14 @@ class Header extends Component{
 
             this.setState({
                 vista: false,
-                palabra: 'vertical'
+                palabra: "fas fa-th"
             },
             () => this.props.sentido(this.state.vista))
         } else {
             console.log('toco');
             this.setState({
                 vista: true,
-                palabra: 'horizontal',
+                palabra: "fas fa-align-justify",
 
             },
             () => this.props.sentido(this.state.vista))            
@@ -51,7 +51,7 @@ class Header extends Component{
             <section className="row2 align-items-center">
             <article class="botton">
                 <div className='orientacion'> 
-                <a onClick={()=> this.orientacion()}>{this.state.palabra}</a>
+                <a onClick={()=> this.orientacion()}><i class={this.state.palabra}></i></a>
             </div>
             </article>
                 {/*<p>Ordenar ASC/ DESC</p>*/}
