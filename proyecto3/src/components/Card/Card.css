@@ -3,6 +3,7 @@
 }
 .aditional-info-show{
     display: block;
+    background-color: rgb(222, 226, 230, 0.5) ;
 }
 .movie-card{
     padding: 10px;
@@ -12,6 +13,9 @@
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
     min-height: 710px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .movie-card:hover{
     box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
@@ -42,6 +46,15 @@
 }
 .textocarta{
     font-size: 160%;
+    margin-left: 1%;
+    display: flex;
+}
+.textocarta-alt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.mastexto{
     margin-left: 1%;
 }
 

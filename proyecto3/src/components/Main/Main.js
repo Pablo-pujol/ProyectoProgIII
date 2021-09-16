@@ -38,7 +38,8 @@ class Main extends Component {
     deleteCard(id){
         const otros = this.state.peliculas.filter(pelicula => pelicula.id != id)
         this.setState({
-            peliculas : otros
+            peliculas : otros,
+            pelisOriginales: otros
         })
     }
     filtrarPeliculas(textoFiltro){
