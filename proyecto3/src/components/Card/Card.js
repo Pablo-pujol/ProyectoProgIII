@@ -46,7 +46,8 @@ class Card extends Component{
                        <div className="mastexto"> 
                             <h3>{title}</h3>
                             <p className="description">{overview}</p>
-                            <section className={`${this.state.viewMore ? 'aditional-info-show' : 'aditional-info'}`}>
+                            
+                            <section className={`${this.props.estado ? 'aditional-info-show' : `${this.state.viewMore ? 'aditional-info-show' : 'aditional-info'}`} `}>
                             <p>Fecha de estreno: {release_date}</p>
                             <p>Idioma original: {original_language}</p>
                             <p>Popularidad: {popularity}</p>
@@ -54,7 +55,8 @@ class Card extends Component{
                             </div>
                     </div>
                     <div>
-                            <a className='ver' onClick={()=>this.viewMore()}>{this.state.text}</a>
+                            {this.props.estado ? '' : 
+                            <a className='ver' onClick={()=>this.viewMore()}>{this.state.text}</a>}
                             <button onClick={()=> this.props.borrar(id)} className= {`${this.props.estado ? 'borrar-columna':'borrar'}`}><i class="far fa-trash-alt"></i></button>
                     </div>
                 </main>

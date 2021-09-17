@@ -87,10 +87,10 @@ class Main extends Component {
                        
                 />
                 
-                <div className = "main">
+                <main className = "main">
                     <button onClick={() => this.cargarMasPeliculas()} type="button" className = "button">Cargar más tarjetas</button>
                     <button onClick={() => this.resetear()} type="button" className = "button">resetear</button>
-                    <main className= {`${this.state.contenedor ? 'contenedor-columna':'contenedor'}`}>
+                    <div className= {`${this.state.contenedor ? 'contenedor-columna':'contenedor'}`}>
                     {this.state.cargando === false ? 
                     <p>Cargando</p>: 
                     this.state.peliculas.map((pelicula) => 
@@ -102,8 +102,8 @@ class Main extends Component {
                     />
                     )
                     }
-                    </main>
-                </div>
+                    </div>
+                </main>
                 {this.state.peliculas.length == 0 ? <p className="resultado-"> No hay datos que coincidan con su búsqueda </p> : ""}
             </>
         )

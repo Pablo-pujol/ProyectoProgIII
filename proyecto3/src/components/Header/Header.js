@@ -6,7 +6,7 @@ class Header extends Component{
         this.state = {
             filtro: "",
             vista: false,
-            palabra: "fas fa-th"
+            palabra: "fas fa-align-justify"
         };
     }
     enviarSubmit(e) {
@@ -26,14 +26,14 @@ class Header extends Component{
 
             this.setState({
                 vista: false,
-                palabra: "fas fa-th"
+                palabra: "fas fa-align-justify",
             },
             () => this.props.sentido(this.state.vista))
         } else {
             console.log('toco');
             this.setState({
                 vista: true,
-                palabra: "fas fa-align-justify",
+                palabra: "fas fa-th"
 
             },
             () => this.props.sentido(this.state.vista))            
